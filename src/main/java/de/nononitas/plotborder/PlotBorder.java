@@ -24,7 +24,6 @@ public class PlotBorder extends JavaPlugin {
     private static PlotBorder plugin;
     public final String CONFIG_VERSION = "1.2";
     public final String CURRENT_VERSION = this.getDescription().getVersion();
-    public BorderChanger borderChanger;
 
     public static String getColoredConfigString(String section) {
         String coloredString = getPlugin().getConfig().getString(section);
@@ -75,12 +74,23 @@ public class PlotBorder extends JavaPlugin {
     public void onEnable() {
         plugin = this;
 
-        if(!isSupportedVersion()) {
+        String version = Bukkit.getServer().getClass().getPackage().getName();
+        version = version.substring(version.lastIndexOf('v'));
+
+        if(!version.contains("v1_14_R") && !version.contains("v1_13_R") && !version.contains("v1_15_R") && !version.contains("v1_16_R") && !version.contains("v1_17_R")) {
+            this.getLogger().severe(ChatColor.RED + "Incompatible Version");
+            Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
 
         if(Bukkit.getPluginManager().getPlugin("PlotSquared") == null) {
             this.getLogger().info("§4Plugin disabled. Please install PlotSquared!");
+            Bukkit.getPluginManager().disablePlugin(this);
+            return;
+        }
+        String plotVersion = Bukkit.getPluginManager().getPlugin("PlotSquared").getDescription().getVersion();
+        if(!plotVersion.startsWith("6.")) {
+            this.getLogger().severe(ChatColor.RED + "Incompatible Plotsquared Version");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
@@ -91,11 +101,7 @@ public class PlotBorder extends JavaPlugin {
         initBstats();
         Updater.updatcheckConsole();
 
-        String plotVersion = Bukkit.getPluginManager().getPlugin("PlotSquared").getDescription().getVersion();
-        if(!plotVersion.startsWith("6.")) {
-            this.getLogger().severe(ChatColor.RED + "Incompatible Plotsquared Version");
-            Bukkit.getPluginManager().disablePlugin(this);
-        }
+
     }
 
     private void initEvents() {
@@ -149,18 +155,6 @@ public class PlotBorder extends JavaPlugin {
 
     }
 
-    private boolean isSupportedVersion() {
-        String version = Bukkit.getServer().getClass().getPackage().getName();
-        version = version.substring(version.lastIndexOf('v'));
-
-        if(!version.contains("v1_14_R") && !version.contains("v1_13_R") && !version.contains("v1_15_R") && !version.contains("v1_16_R") && !version.contains("v1_17_R")) {
-            this.getLogger().severe(ChatColor.RED + "Incompatible Version");
-            Bukkit.getPluginManager().disablePlugin(this);
-            return false;
-        }
-        return true;
-
-    }
 
 
 }

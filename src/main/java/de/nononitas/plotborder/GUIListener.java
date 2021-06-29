@@ -1,5 +1,6 @@
 package de.nononitas.plotborder;
 
+import de.nononitas.plotborder.util.BorderChanger;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -59,7 +60,7 @@ public class GUIListener implements Listener {
                             Bukkit.getScheduler().runTask(PlotBorder.getPlugin(), p::closeInventory);
 
                         } else {
-                            PlotBorder.getPlugin().borderChanger.change(componentType, p, materialToSet, event.getCurrentItem().getItemMeta().getDisplayName());
+                            BorderChanger.change(componentType, p, materialToSet, event.getCurrentItem().getItemMeta().getDisplayName());
                         }
 
                         break;

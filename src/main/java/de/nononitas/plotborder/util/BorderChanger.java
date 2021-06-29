@@ -1,15 +1,17 @@
-package de.nononitas.plotborder;
+package de.nononitas.plotborder.util;
 
 import com.plotsquared.core.configuration.ConfigurationUtil;
 import com.plotsquared.core.player.PlotPlayer;
 import com.plotsquared.core.plot.Plot;
 import com.sk89q.worldedit.function.pattern.Pattern;
+import de.nononitas.plotborder.Gui;
+import de.nononitas.plotborder.PlotBorder;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class BorderChanger {
 
-    public void change(Gui.Type componentType, Player p, String materialToSet, String componentName) {
+    public static void change(Gui.Type componentType, Player p, String materialToSet, String componentName) {
         String notYourPlot = PlotBorder.getColoredConfigString("not-your-plot");
         String notOnPlot = PlotBorder.getColoredConfigString("not-on-plot");
 
