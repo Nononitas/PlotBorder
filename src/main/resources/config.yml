@@ -1,0 +1,92 @@
+#Don't change!
+version : "1.2"
+
+#Max 5 rows
+gui-border-rows: 2
+gui-wall-rows: 2
+
+gui-border-title: '&6Borders'
+gui-wall-title: '&6Walls'
+#Cooldown in seconds
+cooldown: 20
+
+#Messages
+cooldown-m-border: '&cPlease wait %time% seconds before replace the border again'
+cooldown-m-wall: '&cPlease wait %time% seconds before replace the wall again'
+not-your-plot: '&cYou are not the plot owner!'
+not-on-plot: '&cYou are not on a plot!'
+border-changed: '&aBorder changed to %name%!'
+wall-changed: '&aWall changed to %name%!'
+no-permission: '&cYou have no permissions for that edge'
+page: "&ePage"
+
+#Stay on the newest version to get better features!
+#Enable or disable automatic ingame update notification on join
+update-notify: true
+
+#If some blocks don't work change the option in the settings.yml of plotsquared to ->"prevent-unsafe: false"
+wall-items:
+  1:
+    permission: wall.emerald
+    display-material: EMERALD_BLOCK
+    material: EMERALD_BLOCK
+    displayname: '&aEmerald'
+    lore-with-perm:
+      - '&bThis will make your wall'
+      - '&bto emerald blocks'
+      - '&aYou have permission for this wall'
+    lore-without-perm:
+      - '&bThis will make your wall'
+      - '&bto emerald blocks'
+      - "&cYou don't have permission for this wall"
+  2:
+    permission: wall.spawner
+    display-material: SPAWNER
+    material: SPAWNER
+    displayname: '&cSpawner'
+    lore-with-perm:
+      - '&bYour wall will '
+      - '&bconsist of mysterious'
+      - '&cspawners'
+    lore-without-perm:
+      - "&cYou don't have permission for this wall"
+  3:
+    permission: wall.air
+    display-material: BARRIER
+    material: AIR
+    displayname: '&cAir'
+    lore-with-perm:
+      - '&bYour wall will disappear'
+    lore-without-perm:
+      - "&cYou don't have permission for this wall"
+border-items:
+  1:
+    permission: border.emerald
+    display-material: EMERALD_BLOCK
+    material: EMERALD_BLOCK
+    displayname: '&aEmerald'
+    lore-with-perm:
+      - '&bThis will make your edge'
+      - '&bto emerald blocks'
+    lore-without-perm:
+      - "&cYou don't have permission for this border"
+  2:
+    permission: border.spawner
+    display-material: SPAWNER
+    material: SPAWNER
+    displayname: '&cSpawner'
+    lore-with-perm:
+      - '&bYour edge will '
+      - '&bconsist of mysterious'
+      - '&cspawners'
+    lore-without-perm:
+      - "&cYou don't have permission for this border"
+  3:
+    permission: border.air
+    display-material: BARRIER
+    material: AIR
+    displayname: '&cAir'
+    lore-with-perm:
+      - '&bYour edge will disappear'
+    lore-without-perm:
+      - "&cYou don't have permission for this border"

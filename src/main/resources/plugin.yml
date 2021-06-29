@@ -1,0 +1,15 @@
+name: PlotBorder
+version: ${project.version}
+main: de.nononitas.plotborder.PlotBorder
+author: Nononitas
+api-version: 1.13
+depend:
+  - PlotSquared
+commands:
+  plotborder:
+  rand:
+    aliases:
+      - border
+  wall:
+    aliases:
+      - wand
