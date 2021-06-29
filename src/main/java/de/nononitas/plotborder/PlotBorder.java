@@ -2,9 +2,6 @@ package de.nononitas.plotborder;
 
 import de.nononitas.plotborder.util.Metrics;
 import de.nononitas.plotborder.util.Updater;
-import de.nononitas.plotborder.versions.BorderChanger;
-import de.nononitas.plotborder.versions.BorderChangerV4;
-import de.nononitas.plotborder.versions.BorderChangerV5;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -95,13 +92,7 @@ public class PlotBorder extends JavaPlugin {
         Updater.updatcheckConsole();
 
         String plotVersion = Bukkit.getPluginManager().getPlugin("PlotSquared").getDescription().getVersion();
-        if(plotVersion.startsWith("4.")) {
-            borderChanger = new BorderChangerV4();
-        } else if(plotVersion.startsWith("5.")){
-            borderChanger = new BorderChangerV5();
-        } else if(plotVersion.startsWith("6.")){
-
-        } else {
+        if(!plotVersion.startsWith("6.")) {
             this.getLogger().severe(ChatColor.RED + "Incompatible Plotsquared Version");
             Bukkit.getPluginManager().disablePlugin(this);
         }
