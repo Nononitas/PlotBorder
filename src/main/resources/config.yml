@@ -1,5 +1,5 @@
 #Don't change!
-version : "1.2"
+version : "3"
 
 #Max 5 rows
 gui-border-rows: 2
@@ -23,6 +23,9 @@ page: "&ePage"
 #Stay on the newest version to get better features!
 #Enable or disable automatic ingame update notification on join
 update-notify: true
+
+#Items in the row where you can switch pages
+last-row-material: AIR
 
 #If some blocks don't work change the option in the settings.yml of plotsquared to ->"prevent-unsafe: false"
 wall-items:

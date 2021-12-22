@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.nononitas</groupId>
     <artifactId>PlotBorder</artifactId>
-    <version>1.8</version>
+    <version>1.9.1</version>
 
 
     <properties>
@@ -45,7 +45,11 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </repository>
         <repository>
-            <id>IntellectualSites</id>
+            <id>IntellectualSites Releases</id>
+            <url>https://mvn.intellectualsites.com/content/repositories/releases/</url>
+        </repository>
+        <repository>
+            <id>intellectualsites snapshots</id>
             <url>https://mvn.intellectualsites.com/content/repositories/snapshots/</url>
         </repository>
     </repositories>
@@ -53,20 +57,20 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.15.2-R0.1-SNAPSHOT</version>
+            <version>1.17.1-R0.1-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>C:/Users/Nono/Documents/Spigots/spigot-1.15.2.jar</systemPath>
+            <systemPath>C:/Users/Nononitas/Documents/Spigots/spigot-1.17.1.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.plotsquared</groupId>
             <artifactId>PlotSquared-Core</artifactId>
-            <version>6.0.6-SNAPSHOT</version>
+            <version>6.2.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.fastasyncworldedit</groupId>
-            <artifactId>FAWE-Bukkit</artifactId>
-            <version>1.17-15</version>
+            <artifactId>FastAsyncWorldEdit-Bukkit</artifactId>
+            <version>1.17-369</version>
             <scope>provided</scope>
         </dependency>
 

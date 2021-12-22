@@ -19,10 +19,10 @@ import java.util.UUID;
 
 public class PlotBorder extends JavaPlugin {
 
-    public static final String prefix = "§ePlotBorder §7» §r";
+    public static final String PREFIX = "§ePlotBorder §7» §r";
     public static final HashMap<UUID, Integer> guiPage = new HashMap<>();
     private static PlotBorder plugin;
-    public final String CONFIG_VERSION = "1.2";
+    public final String CONFIG_VERSION = "3";
     public final String CURRENT_VERSION = this.getDescription().getVersion();
 
     public static String getColoredConfigString(String section) {
@@ -77,7 +77,7 @@ public class PlotBorder extends JavaPlugin {
         String version = Bukkit.getServer().getClass().getPackage().getName();
         version = version.substring(version.lastIndexOf('v'));
 
-        if(!version.contains("v1_14_R") && !version.contains("v1_13_R") && !version.contains("v1_15_R") && !version.contains("v1_16_R") && !version.contains("v1_17_R")) {
+        if(!version.contains("v1_14_R") && !version.contains("v1_13_R") && !version.contains("v1_15_R") && !version.contains("v1_16_R") && !version.contains("v1_17_R") && !version.contains("v1_18R")) {
             this.getLogger().severe(ChatColor.RED + "Incompatible Version");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
@@ -96,6 +96,8 @@ public class PlotBorder extends JavaPlugin {
         }
 
         createConfig();
+        reloadConfig();
+        Updater.updateConfig();
         initEvents();
         initCmds();
         initBstats();

@@ -20,16 +20,16 @@ public class PlotBorderCmd implements CommandExecutor, TabCompleter {
                 case "reload":
                     if(sender.hasPermission("plotborder.admin")) {
                         PlotBorder.getPlugin().reloadConfig();
-                        sender.sendMessage(PlotBorder.prefix + "§aConfig reloaded");
+                        sender.sendMessage(PlotBorder.PREFIX + "§aConfig reloaded");
                     } else {
-                        sender.sendMessage(PlotBorder.prefix + "§cNo permissions");
+                        sender.sendMessage(PlotBorder.PREFIX + "§cNo permissions");
                     }
                     break;
                 case "updatecheck":
                     if(sender.hasPermission("plotborder.admin")) {
                         Updater.updatecheck(sender, true);
                     } else {
-                        sender.sendMessage(PlotBorder.prefix + "§cNo permissions");
+                        sender.sendMessage(PlotBorder.PREFIX + "§cNo permissions");
                     }
                     break;
                 default:

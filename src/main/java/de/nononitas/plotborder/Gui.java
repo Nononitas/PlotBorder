@@ -52,6 +52,10 @@ public class Gui {
 
         }
 
+        ItemStack lastRowPlaceHolderItem = new ItemStack(Material.valueOf(config.getString("last-row-material")));
+        for (int i = invSize; i < invSize + 9; i++){
+            inv.setItem(i, lastRowPlaceHolderItem);
+        }
 
         ItemStack arrowRight = Heads.WHITE_ARROW_RIGHT.getItemStack();
         ItemStack arrowLeft = Heads.WHITE_ARROW_LEFT.getItemStack();
@@ -76,8 +80,8 @@ public class Gui {
 
 
         if(Material.getMaterial(materialString) == null) {
-            Bukkit.getConsoleSender().sendMessage(PlotBorder.prefix + "§4" + materialString + "§c is not a valid material");
-            Bukkit.getConsoleSender().sendMessage(PlotBorder.prefix + "§cPlease check the config.yml");
+            Bukkit.getConsoleSender().sendMessage(PlotBorder.PREFIX + "§4" + materialString + "§c is not a valid material");
+            Bukkit.getConsoleSender().sendMessage(PlotBorder.PREFIX + "§cPlease check the config.yml");
             materialString = "AIR";
         }
         Material material = Material.getMaterial(materialString);
