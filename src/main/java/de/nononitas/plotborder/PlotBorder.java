@@ -77,7 +77,7 @@ public class PlotBorder extends JavaPlugin {
         String version = Bukkit.getServer().getClass().getPackage().getName();
         version = version.substring(version.lastIndexOf('v'));
 
-        if(!version.contains("v1_14_R") && !version.contains("v1_13_R") && !version.contains("v1_15_R") && !version.contains("v1_16_R") && !version.contains("v1_17_R") && !version.contains("v1_18R")) {
+        if(!version.contains("v1_14_R") && !version.contains("v1_13_R") && !version.contains("v1_15_R") && !version.contains("v1_16_R") && !version.contains("v1_17_R") && !version.contains("v1_18_R")) {
             this.getLogger().severe(ChatColor.RED + "Incompatible Version");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
