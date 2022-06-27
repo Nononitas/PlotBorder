@@ -43,7 +43,7 @@ public class PlotBorder extends JavaPlugin {
     }
 
     public static boolean hasPlayerCooldown(Player p) {
-        if(p.hasMetadata("rand-cooldown")) {
+        if (p.hasMetadata("rand-cooldown")) {
             int dif = (int) (((long) getMetaData(p, "rand-cooldown") - System.currentTimeMillis()) / 1000L);
             return dif > 0;
         }
@@ -51,7 +51,7 @@ public class PlotBorder extends JavaPlugin {
     }
 
     public static int getCooldown(Player p) {
-        if(hasPlayerCooldown(p)) {
+        if (hasPlayerCooldown(p)) {
             return (int) (((long) getMetaData(p, "rand-cooldown") - System.currentTimeMillis()) / 1000L);
         }
 
@@ -77,19 +77,20 @@ public class PlotBorder extends JavaPlugin {
         String version = Bukkit.getServer().getClass().getPackage().getName();
         version = version.substring(version.lastIndexOf('v'));
 
-        if(!version.contains("v1_14_R") && !version.contains("v1_13_R") && !version.contains("v1_15_R") && !version.contains("v1_16_R") && !version.contains("v1_17_R") && !version.contains("v1_18_R")) {
+        if (!version.contains("v1_14_R") && !version.contains("v1_13_R") && !version.contains("v1_15_R") &&
+                !version.contains("v1_16_R") && !version.contains("v1_17_R") && !version.contains("v1_18_R") && !version.contains("v1_19_R")) {
             this.getLogger().severe(ChatColor.RED + "Incompatible Version");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
 
-        if(Bukkit.getPluginManager().getPlugin("PlotSquared") == null) {
+        if (Bukkit.getPluginManager().getPlugin("PlotSquared") == null) {
             this.getLogger().info("§4Plugin disabled. Please install PlotSquared!");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
         String plotVersion = Bukkit.getPluginManager().getPlugin("PlotSquared").getDescription().getVersion();
-        if(!plotVersion.startsWith("6.")) {
+        if (!plotVersion.startsWith("6.")) {
             this.getLogger().severe(ChatColor.RED + "Incompatible Plotsquared Version");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
@@ -113,7 +114,7 @@ public class PlotBorder extends JavaPlugin {
             @EventHandler
             public void Listener(PlayerJoinEvent event) {
                 Player p = event.getPlayer();
-                if(p.hasPermission("plotborder.admin") && PlotBorder.getPlugin().getConfig().getBoolean("update-notify")) {
+                if (p.hasPermission("plotborder.admin") && PlotBorder.getPlugin().getConfig().getBoolean("update-notify")) {
                     Updater.updatecheck(p, false);
                 }
             }
@@ -123,7 +124,7 @@ public class PlotBorder extends JavaPlugin {
     private void initCmds() {
 
         this.getCommand("wall").setExecutor((sender, command, label, args) -> {
-            if(sender instanceof Player) {
+            if (sender instanceof Player) {
                 Player p = (Player) sender;
                 Gui.openGui(Gui.Type.WALL, p, 0);
                 guiPage.put(p.getUniqueId(), 0);
@@ -131,7 +132,7 @@ public class PlotBorder extends JavaPlugin {
             return true;
         });
         this.getCommand("rand").setExecutor((sender, command, label, args) -> {
-            if(sender instanceof Player) {
+            if (sender instanceof Player) {
                 Player p = (Player) sender;
                 Gui.openGui(Gui.Type.BORDER, p, 0);
                 guiPage.put(p.getUniqueId(), 0);
@@ -144,7 +145,7 @@ public class PlotBorder extends JavaPlugin {
 
     private void createConfig() {
         File customConfigFile = new File(getDataFolder(), "config.yml");
-        if(!customConfigFile.exists()) {
+        if (!customConfigFile.exists()) {
             this.saveDefaultConfig();
         }
     }
@@ -156,7 +157,6 @@ public class PlotBorder extends JavaPlugin {
 
 
     }
-
 
 
 }
