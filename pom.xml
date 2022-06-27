@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.nononitas</groupId>
     <artifactId>PlotBorder</artifactId>
-    <version>1.9.1</version>
+    <version>1.9.2</version>
 
 
     <properties>
@@ -36,6 +36,11 @@
 
 
     <repositories>
+        <!-- Spigot -->
+        <repository>
+            <id>spigotmc-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
         <repository>
             <id>enginehub</id>
             <url>https://maven.enginehub.org/repo/</url>
@@ -53,24 +58,44 @@
             <url>https://mvn.intellectualsites.com/content/repositories/snapshots/</url>
         </repository>
     </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.intellectualsites.bom</groupId>
+                <artifactId>bom-1.18.x</artifactId>
+                <version>1.9</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.17.1-R0.1-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>C:/Users/Nononitas/Documents/Spigots/spigot-1.17.1.jar</systemPath>
+            <version>1.17-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
+        <!-- Mojang authlib -->
+        <dependency>
+            <groupId>com.mojang</groupId>
+            <artifactId>authlib</artifactId>
+            <version>1.5.21</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- plotsquared -->
         <dependency>
             <groupId>com.plotsquared</groupId>
             <artifactId>PlotSquared-Core</artifactId>
-            <version>6.2.1</version>
             <scope>provided</scope>
         </dependency>
+        <!-- FAWE API -->
         <dependency>
             <groupId>com.fastasyncworldedit</groupId>
-            <artifactId>FastAsyncWorldEdit-Bukkit</artifactId>
-            <version>1.17-369</version>
+            <artifactId>FastAsyncWorldEdit-Core</artifactId>
+            <version>2.0.1</version>
             <scope>provided</scope>
         </dependency>
 

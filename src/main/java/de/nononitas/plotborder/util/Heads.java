@@ -19,7 +19,7 @@ import java.util.UUID;
 public enum Heads {
 
     WHITE_ARROW_RIGHT("OTU2YTM2MTg0NTllNDNiMjg3YjIyYjdlMjM1ZWM2OTk1OTQ1NDZjNmZjZDZkYzg0YmZjYTRjZjMwYWI5MzExIn19fQ==", "Rechts"),
-    WHITE_ARROW_LEFT("Y2RjOWU0ZGNmYTQyMjFhMWZhZGMxYjViMmIxMWQ4YmVlYjU3ODc5YWYxYzQyMzYyMTQyYmFlMWVkZDUifX19\\", "Links");
+    WHITE_ARROW_LEFT("Y2RjOWU0ZGNmYTQyMjFhMWZhZGMxYjViMmIxMWQ4YmVlYjU3ODc5YWYxYzQyMzYyMTQyYmFlMWVkZDUifX19", "Links");
 
     private final ItemStack item;
     private final String idTag;
