@@ -20,7 +20,7 @@ public class Gui {
 
         String title = PlotBorder.color(config.getString("gui-" + type + "-title"));
         int invSize = config.getInt("gui-" + type + "-rows") * 9;
-        Inventory inv = Bukkit.createInventory(null, (config.getInt("gui-" + type + "-rows") + 1) * 9, title);
+        Inventory inv = Bukkit.createInventory(null, (config.getInt("gui-" + type + "-rows") + 3) * 9, title);
 
         int index = 0;
         int startSlot = page * invSize;
