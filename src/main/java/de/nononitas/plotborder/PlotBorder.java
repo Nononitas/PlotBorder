@@ -78,7 +78,7 @@ public class PlotBorder extends JavaPlugin {
         version = version.substring(version.lastIndexOf('v'));
 
         if (!version.contains("v1_14_R") && !version.contains("v1_13_R") && !version.contains("v1_15_R") &&
-                !version.contains("v1_16_R") && !version.contains("v1_17_R") && !version.contains("v1_18_R") && !version.contains("v1_19_R")) {
+                !version.contains("v1_16_R") && !version.contains("v1_17_R") && !version.contains("v1_18_R") && !version.contains("v1_19_R") && !version.contains("v1_20_R") ) {
             this.getLogger().severe(ChatColor.RED + "Incompatible Version");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
@@ -90,7 +90,7 @@ public class PlotBorder extends JavaPlugin {
             return;
         }
         String plotVersion = Bukkit.getPluginManager().getPlugin("PlotSquared").getDescription().getVersion();
-        if (!plotVersion.startsWith("6.")) {
+        if (!plotVersion.startsWith("7.")) {
             this.getLogger().severe(ChatColor.RED + "Incompatible Plotsquared Version");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
