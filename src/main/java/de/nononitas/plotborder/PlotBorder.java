@@ -90,7 +90,7 @@ public class PlotBorder extends JavaPlugin {
             return;
         }
         String plotVersion = Bukkit.getPluginManager().getPlugin("PlotSquared").getDescription().getVersion();
-        if (!plotVersion.startsWith("7.")) {
+        if (!plotVersion.startsWith("6.") && !plotVersion.startsWith("7.")) {
             this.getLogger().severe(ChatColor.RED + "Incompatible Plotsquared Version");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
