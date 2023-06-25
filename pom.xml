@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.nononitas</groupId>
     <artifactId>PlotBorder</artifactId>
-    <version>1.9.2</version>
+    <version>1.9.3</version>
 
 
     <properties>
@@ -64,7 +64,7 @@
             <dependency>
                 <groupId>com.intellectualsites.bom</groupId>
                 <artifactId>bom-1.18.x</artifactId>
-                <version>1.9</version>
+                <version>1.28</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -95,7 +95,6 @@
         <dependency>
             <groupId>com.fastasyncworldedit</groupId>
             <artifactId>FastAsyncWorldEdit-Core</artifactId>
-            <version>2.0.1</version>
             <scope>provided</scope>
         </dependency>
 
