@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.nononitas</groupId>
     <artifactId>PlotBorder</artifactId>
-    <version>1.9.3</version>
+    <version>1.9.4_BETA</version>
 
 
     <properties>
@@ -75,7 +75,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.17-R0.1-SNAPSHOT</version>
+            <version>1.20.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <!-- Mojang authlib -->
@@ -97,7 +97,12 @@
             <artifactId>FastAsyncWorldEdit-Core</artifactId>
             <scope>provided</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20230227</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 </project>
