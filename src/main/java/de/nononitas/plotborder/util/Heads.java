@@ -40,7 +40,7 @@ public enum Heads {
 
         SkullMeta headMeta = (SkullMeta) head.getItemMeta();
 
-        GameProfile profile = new GameProfile(UUID.randomUUID(), null);
+        GameProfile profile = new GameProfile(UUID.randomUUID(), "NotNullNotEmpty");
 
         profile.getProperties().put("textures", new Property("textures", url));
 
